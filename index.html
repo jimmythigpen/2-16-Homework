@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Blog</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+
+  <div class="app-container">
+    <ul class="js-post-list">
+    </ul>
+    <button class="js-create-post">Create</button>
+  </div>
+
+  <script type="text/template" id="post-template">
+    <%= title %>
+      <button class="js-edit-post">Edit</button>
+      <button class="js-delete-post">Delete</button>
+  </script>
+
+  <script type="text/template" id="view-post-template">
+    <%= title %>
+    <%= body %>
+    <%= timestamp %>
+  </script>
+
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/underscore/underscore.js"></script>
+  <script src="bower_components/backbone/backbone.js"></script>
+  <script src="scripts/main.js"></script>
+
+</body>
+
+</html>
