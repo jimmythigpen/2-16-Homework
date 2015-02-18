@@ -1,10 +1,50 @@
 .app-container {
   margin: 0 auto;
-  width: 500px;
+  width: 300px;
   text-align: left;
 
 }
 
-ul {
+.post-list {
+  position: relative;
+  padding: 0;
   list-style-type: none;
+
+  button {
+    position: absolute;
+  }
+}
+
+.edit-post {
+  right: 55px;
+}
+
+.delete-post {
+  right: 0;
+}
+
+li {
+  width: 200px;
+  height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.create-container {
+  margin-top: 30px;
+}
+
+.new-title {
+  display:block;
+  margin-bottom: 5px;
+}
+
+.new-body {
+  display:block;
+  margin-bottom: 5px;
+}
+
+.save-post {
+  display:block;
 }

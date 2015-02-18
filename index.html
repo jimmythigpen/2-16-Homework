@@ -10,21 +10,35 @@
 <body>
 
   <div class="app-container">
-    <ul class="js-post-list">
+    <ul class="js-post-list post-list">
     </ul>
-    <button class="js-create-post">Create</button>
+
+    <article class="js-detail-container">
+    </article>
+
+    <form class="js-create-container create-container"></form>
   </div>
 
   <script type="text/template" id="post-template">
     <%= title %>
-      <button class="js-edit-post">Edit</button>
-      <button class="js-delete-post">Delete</button>
+  </script>
+
+  <script type="text/template" id="create-button-template">
+    <button class="js-create-post create-post">Create</button>
   </script>
 
   <script type="text/template" id="view-post-template">
-    <%= title %>
-    <%= body %>
-    <%= timestamp %>
+    <h1 class="js-title"><%= title %></h1>
+    <p class="js-body"><%= body %></p>
+    <h4><%= timestamp %></h4>
+    <button class="js-edit-post edit-post">Edit</button>
+    <button class="js-delete-post delete-post">Delete</button>
+  </script>
+
+  <script type="text/template" id="create-post-template">
+    <input class="js-new-title new-title"></input>
+    <textarea class="js-new-body new-body"></textarea>
+    <button class="js-save-post save-post">Save</button>
   </script>
 
   <script src="bower_components/jquery/dist/jquery.js"></script>
