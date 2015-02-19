@@ -52,7 +52,7 @@
     el: '.js-post-list',
 
     initialize: function() {
-      this.listenTo(this.collection, 'sync', this.render);
+      this.listenTo(this.collection, 'sync destroy', this.render);
     },
 
     render: function(){
@@ -128,7 +128,7 @@
     createPost: function(event){
       event.preventDefault();
       console.log('createPost is running');
-      var createView = new CreatePostView();
+      var createView = new CreatePostView({collection: this.collection});
       createView.render();
       this.$el.append(createView.el);
     }
@@ -174,7 +174,6 @@
       this.postsListView = new PostsListView({collection: this.posts});
       this.postDetailView = new PostDetailView();
       this.buttonListView = new ButtonListView({collection: this.posts});
-      this.createPostView = new CreatePostView({collection: this.posts});
 
     },
 
