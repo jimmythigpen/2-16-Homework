@@ -7,6 +7,7 @@
     idAttribute: "_id",
 
     defaults: function(attributes) {
+      attributes = attributes || {};
       return _.defaults(attributes, {
         title: '',
         body: '',
@@ -150,10 +151,12 @@
 
     savePost: function(event){
       event.preventDefault();
-      var title = $('.js-new-title').val();
-      var body = $('.js-new-body').val();
-      var timestamp = 'the time';
-      this.collection.create({title: title, body: body, timestamp: timestamp});
+      var title = $('.js-new-title').val() ? $('.js-new-title').val() : undefined;
+      var body = $('.js-new-body').val() ? $('.js-new-body').val() : undefined;
+      this.collection.create({
+        title: title,
+        body: body
+      });
     }
 
   });
